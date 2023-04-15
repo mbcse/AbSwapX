@@ -5,8 +5,11 @@ Hey this our ETH Tokyo 2023 hack AbswapX. We have created an automation module f
 
 ## Key Features
 **1. Trustless** - AbswapX is a smart contract module, meaning it is completely decentralized, composable and operates on a trustless system.
+
 **2. Cross-chain** - AbswapX can be deployed on any EVM compatible chain, making it possible for users to trade across multiple chains.
+
 **3. Automation** - AbswapX leverages Gelato Network to automate the execution of limit orders. This means that once a user creates a limit order, they no longer need to actively monitor the market to execute the trade.
+
 **4. Composable** - AbswapX can be easily integrated into other DeFi protocols, enabling composability and allowing developers to create more complex trading strategies.
 
 ## How it Works
