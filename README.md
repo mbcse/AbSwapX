@@ -24,13 +24,14 @@ You can find our contract deployments on -
   * <a href="https://polygonscan.com/address/0xc082906f6744b3438c9ef78c738b225af8e17021#tokentxns" target="_blank">Gnosis Chain</a>
   * <a href="https://gnosisscan.io/address/0xaa3E5FA2DcB475752AC1fbE86769201A1e30b29B" target="_blank">Polygon Chain</a>
 * Testnets
-  * <a href="https://www.google.com/" target="_blank">Goerli Testnet</a>
+  * <a href="https://goerli.etherscan.io/address/0xd55cb9fa29c5E66B2681dfbA56e3bcAae15571ed" target="_blank">Goerli Testnet</a>
   * <a href="https://www.google.com/" target="_blank">Polygon Testnet</a>
   * <a href="https://www.google.com/" target="_blank">Polygon zkEVM</a>
   * <a href="https://alfajores.celoscan.io/address/0x363109864e7505b9d81ba5aca261fa3824a3540f" target="_blank">Celo</a>
-  * <a href="https://www.google.com/" target="_blank">Linea</a>
+  * <a href="https://explorer.testnet.mantle.xyz/tx/0xfb8c6d3d85314b5ac8e57ea9d33d2d7403bf7edb8cd90806782d8987ac57c87c" target="_blank">Mantle zK</a>
+  * <a href="https://explorer.goerli.linea.build/address/0x0062623038c3A46765b359Cc6621C4b8BD7fca5c" target="_blank">Linea</a>
   * <a href="https://www.google.com/" target="_blank">Scroll zK</a>
   * <a href="https://www.google.com/" target="_blank">Taiko zK</a>
-  * <a href="https://www.google.com/" target="_blank">Mantle zK</a>
+  
 
  
