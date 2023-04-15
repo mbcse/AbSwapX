@@ -45,6 +45,7 @@ module.exports = {
       polygon: process.env.POLYGONSCAN_API_KEY,
       bscTestnet: process.env.BSCSCAN_API_KEY,
       bsc: process.env.BSCSCAN_API_KEY,
+      gnosis: process.env.GNOSISSCAN_API_KEY,
     },
 
   },
