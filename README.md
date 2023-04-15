@@ -23,10 +23,13 @@ You can find our contract deployments on -
 * Testnets
   * <a href="https://www.google.com/" target="_blank">Goerli Testnet</a>
   * <a href="https://www.google.com/" target="_blank">Polygon Testnet</a>
-* Mainnets
-  * <a href="https://www.google.com/" target="_blank">Gnosis Chain</a>
-  * <a href="https://www.google.com/" target="_blank">Polygon Chain</a>
   * <a href="https://www.google.com/" target="_blank">Polygon zkEVM</a>
   * <a href="https://www.google.com/" target="_blank">Linea</a>
   * <a href="https://www.google.com/" target="_blank">Scroll zK</a>
+  * <a href="https://www.google.com/" target="_blank">Taiko zK</a>
+  * <a href="https://www.google.com/" target="_blank">Mantle zK</a>
+* Mainnets
+  * <a href="https://www.google.com/" target="_blank">Gnosis Chain</a>
+  * <a href="https://www.google.com/" target="_blank">Polygon Chain</a>
 
+ 
