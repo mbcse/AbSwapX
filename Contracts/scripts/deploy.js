@@ -26,30 +26,30 @@ const deployGoerli = async () => {
     `Deployed to ${bulkSwap.address}`
   );
 
-  // const contract = new ethers.Contract(
-  //   "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-  //   abi,
-  //   hre.ethers.provider
-  // );
+  // // const contract = new ethers.Contract(
+  // //   "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  // //   abi,
+  // //   hre.ethers.provider
+  // // );
 
-  // const tx = await contract.executeOrder(
-  //   "0x6d4b5acFB1C08127e8553CC41A9aC8F06610eFc7",
-  //   "0x6d4b5acFB1C08127e8553CC41A9aC8F06610eFc7",
-  //   "100000000000000000000",
-  //   "0x07865c6E87B9F70255377e024ace6630C1Eaa37F",
-  //   "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6",
-  //   "80001",
-  //   "9991",
-  //   "",
-  //   { value: ethers.utils.formatEther("0.1") }
-  // )
-  const res = await tx.wait();
-  console.log(res, tx);
+  // // const tx = await contract.executeOrder(
+  // //   "0x6d4b5acFB1C08127e8553CC41A9aC8F06610eFc7",
+  // //   "0x6d4b5acFB1C08127e8553CC41A9aC8F06610eFc7",
+  // //   "100000000000000000000",
+  // //   "0x07865c6E87B9F70255377e024ace6630C1Eaa37F",
+  // //   "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6",
+  // //   "80001",
+  // //   "9991",
+  // //   "",
+  // //   { value: ethers.utils.formatEther("0.1") }
+  // // )
+  // const res = await tx.wait();
+  // console.log(res, tx);
 
 
 
   await hre.run("verify:verify", {
-    address: BulkSwap.address,
+    address: "0x5E22030F94E8d9D9027757FaF7353266EDa07a4E",
     constructorArguments: [
       "0xFCa08024A6D4bCc87275b1E4A1E22B71fAD7f649",
       "0xE592427A0AEce92De3Edee1F18E0157C05861564",
@@ -73,7 +73,7 @@ const deployMumbai = async () => {
   );
 
   await hre.run("verify:verify", {
-    address: BulkSwap.address,
+    address: "0x5E22030F94E8d9D9027757FaF7353266EDa07a4E",
     constructorArguments: [
       "0x2334937846Ab2A3FCE747b32587e1A1A2f6EEC5a",
       "0xE592427A0AEce92De3Edee1F18E0157C05861564",
@@ -87,7 +87,7 @@ const deployMumbai = async () => {
 
 async function main() {
   await deployGoerli();
-  await deployMumbai();
+  // await deployMumbai();
 }
 
 // We recommend this pattern to be able to use async/await everywhere

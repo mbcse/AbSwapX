@@ -1,0 +1,55 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IXReceiver",
+  "sourceName": "@connext/interfaces/core/IXReceiver.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_transferId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_originSender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "_origin",
+          "type": "uint32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_callData",
+          "type": "bytes"
+        }
+      ],
+      "name": "xReceive",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,1644 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/contracts/BulkSwap.sol": {
+      "lastModificationDate": 1681565401398,
+      "contentHash": "350dbec6bce56b6db0b8dd65719541e5",
+      "sourceName": "contracts/BulkSwap.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/OpsTaskCreator.sol",
+        "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol",
+        "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
+        "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol",
+        "@connext/nxtp-contracts/contracts/core/connext/interfaces/IConnext.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "hardhat/console.sol",
+        "@connext/interfaces/core/IXReceiver.sol",
+        "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "BulkSwap",
+        "WETH9_"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/interfaces/OpsTaskCreator.sol": {
+      "lastModificationDate": 1681531703962,
+      "contentHash": "c6989e0a2a03b7846c9c5c9d927ab109",
+      "sourceName": "interfaces/OpsTaskCreator.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./OpsReady.sol"
+      ],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "OpsTaskCreator"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1681550916565,
+      "contentHash": "4ff3cd2f6272c9a6516e9ee4f2b967d3",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">= 0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/interfaces/core/IXReceiver.sol": {
+      "lastModificationDate": 1681552181755,
+      "contentHash": "bdb597c337215e04702edd5fc5069e3a",
+      "sourceName": "@connext/interfaces/core/IXReceiver.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IXReceiver"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol": {
+      "lastModificationDate": 1681550916178,
+      "contentHash": "f0616d1842da6584f8454c9b323d777f",
+      "sourceName": "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "TransferHelper"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1681550916185,
+      "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol": {
+      "lastModificationDate": 1681550916140,
+      "contentHash": "ffd42687b3db01d30c24213d961fcf9f",
+      "sourceName": "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "ISwapRouter"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol": {
+      "lastModificationDate": 1681552212417,
+      "contentHash": "3fd36426274a5b35f7e702f87ba08a8e",
+      "sourceName": "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IUniswapV2Router01.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IUniswapV2Router02"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol": {
+      "lastModificationDate": 1681550916919,
+      "contentHash": "d9654a0fc044a31d4106ee6bca772add",
+      "sourceName": "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AggregatorV3Interface"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+      "lastModificationDate": 1681550916354,
+      "contentHash": "0320a90f714843ca19373ed143fc4466",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol",
+        "../extensions/draft-IERC20Permit.sol",
+        "../../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/core/connext/interfaces/IConnext.sol": {
+      "lastModificationDate": 1681550922273,
+      "contentHash": "b7803abc0544772f915185e74243d306",
+      "sourceName": "@connext/nxtp-contracts/contracts/core/connext/interfaces/IConnext.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "../libraries/LibConnextStorage.sol",
+        "../libraries/LibDiamond.sol",
+        "../libraries/SwapUtils.sol",
+        "../libraries/TokenId.sol",
+        "./IStableSwap.sol",
+        "./IDiamondCut.sol",
+        "./IDiamondLoupe.sol"
+      ],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "IConnext"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/interfaces/OpsReady.sol": {
+      "lastModificationDate": 1681531703961,
+      "contentHash": "0445915b24949a9df930a06306bf52c1",
+      "sourceName": "interfaces/OpsReady.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "./Types.sol"
+      ],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "OpsReady"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/interfaces/Types.sol": {
+      "lastModificationDate": 1681531703963,
+      "contentHash": "557d593cfdb6871ea2144e7bfc8d5e4e",
+      "sourceName": "interfaces/Types.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "IOps",
+        "IOpsProxyFactory",
+        "ITaskTreasuryUpgradable"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1681550915836,
+      "contentHash": "f31ad6fc4bbf9c06203987220156a6ba",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.1"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol": {
+      "lastModificationDate": 1681550915931,
+      "contentHash": "fb77f144244b9ab12533aa6ce85ef8c5",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Permit"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol": {
+      "lastModificationDate": 1681550915468,
+      "contentHash": "a8ba2d37b0107911ae0e3b0e123cbd83",
+      "sourceName": "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV3SwapCallback"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol": {
+      "lastModificationDate": 1681552212417,
+      "contentHash": "95d8729b2c698dc663322167b3c085fe",
+      "sourceName": "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IUniswapV2Router01"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/core/connext/libraries/LibConnextStorage.sol": {
+      "lastModificationDate": 1681550922276,
+      "contentHash": "eed6ae63c17148c1802d3867cd45ae69",
+      "sourceName": "@connext/nxtp-contracts/contracts/core/connext/libraries/LibConnextStorage.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IStableSwap.sol",
+        "../../../messaging/interfaces/IConnectorManager.sol",
+        "./SwapUtils.sol",
+        "./TokenId.sol"
+      ],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "LibConnextStorage"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/core/connext/libraries/TokenId.sol": {
+      "lastModificationDate": 1681550922278,
+      "contentHash": "484bf0b86c277cdd3505b8598afab958",
+      "sourceName": "@connext/nxtp-contracts/contracts/core/connext/libraries/TokenId.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": []
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/core/connext/libraries/LibDiamond.sol": {
+      "lastModificationDate": 1681550922276,
+      "contentHash": "33dfae8b50913c3c0dcbe2a35d12821e",
+      "sourceName": "@connext/nxtp-contracts/contracts/core/connext/libraries/LibDiamond.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IDiamondCut.sol"
+      ],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "LibDiamond"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/core/connext/libraries/SwapUtils.sol": {
+      "lastModificationDate": 1681550922277,
+      "contentHash": "0d0e66b5026b3482326252f5d115924c",
+      "sourceName": "@connext/nxtp-contracts/contracts/core/connext/libraries/SwapUtils.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "../helpers/LPToken.sol",
+        "./AmplificationUtils.sol",
+        "./MathUtils.sol",
+        "./AssetLogic.sol",
+        "./Constants.sol"
+      ],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "SwapUtils"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/core/connext/interfaces/IStableSwap.sol": {
+      "lastModificationDate": 1681550922274,
+      "contentHash": "78fc9f332c72097b194bfc8eb0d4da1c",
+      "sourceName": "@connext/nxtp-contracts/contracts/core/connext/interfaces/IStableSwap.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "IStableSwap"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/core/connext/interfaces/IDiamondCut.sol": {
+      "lastModificationDate": 1681550922273,
+      "contentHash": "555c13f425c0fc0e0f9654824ce65413",
+      "sourceName": "@connext/nxtp-contracts/contracts/core/connext/interfaces/IDiamondCut.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "IDiamondCut"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/core/connext/interfaces/IDiamondLoupe.sol": {
+      "lastModificationDate": 1681550922273,
+      "contentHash": "4ac6bbeb59fd72f1853cb6615ebe247a",
+      "sourceName": "@connext/nxtp-contracts/contracts/core/connext/interfaces/IDiamondLoupe.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "IDiamondLoupe"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/messaging/interfaces/IConnectorManager.sol": {
+      "lastModificationDate": 1681550922290,
+      "contentHash": "570c670ed0da562c0d98ae470a61ce30",
+      "sourceName": "@connext/nxtp-contracts/contracts/messaging/interfaces/IConnectorManager.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IOutbox.sol"
+      ],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "IConnectorManager"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/core/connext/helpers/LPToken.sol": {
+      "lastModificationDate": 1681550922270,
+      "contentHash": "a80c4d38c8996469f24a5a0ffb6b7e6f",
+      "sourceName": "@connext/nxtp-contracts/contracts/core/connext/helpers/LPToken.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20BurnableUpgradeable.sol",
+        "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol"
+      ],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "LPToken"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/core/connext/libraries/AmplificationUtils.sol": {
+      "lastModificationDate": 1681550922274,
+      "contentHash": "c662a7f714857bda4811df3f93ad2708",
+      "sourceName": "@connext/nxtp-contracts/contracts/core/connext/libraries/AmplificationUtils.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./SwapUtils.sol",
+        "./Constants.sol"
+      ],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "AmplificationUtils"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/core/connext/libraries/MathUtils.sol": {
+      "lastModificationDate": 1681550922277,
+      "contentHash": "cb7cf0ffcbf47df96335fcabd5863d84",
+      "sourceName": "@connext/nxtp-contracts/contracts/core/connext/libraries/MathUtils.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "MathUtils"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/core/connext/libraries/AssetLogic.sol": {
+      "lastModificationDate": 1681550922275,
+      "contentHash": "64b77d6e4c9011bab230d1b2e247b56b",
+      "sourceName": "@connext/nxtp-contracts/contracts/core/connext/libraries/AssetLogic.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "../../../shared/libraries/TypeCasts.sol",
+        "../interfaces/IStableSwap.sol",
+        "./LibConnextStorage.sol",
+        "./SwapUtils.sol",
+        "./Constants.sol",
+        "./TokenId.sol"
+      ],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "AssetLogic"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/core/connext/libraries/Constants.sol": {
+      "lastModificationDate": 1681550922276,
+      "contentHash": "ad6b03a9a614e09ae44409dfc1071202",
+      "sourceName": "@connext/nxtp-contracts/contracts/core/connext/libraries/Constants.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "Constants"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol": {
+      "lastModificationDate": 1681550916285,
+      "contentHash": "403ce8273abde646bff81558ddf512ad",
+      "sourceName": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/ContextUpgradeable.sol",
+        "../proxy/utils/Initializable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "OwnableUpgradeable"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20BurnableUpgradeable.sol": {
+      "lastModificationDate": 1681550916025,
+      "contentHash": "8c58ae2b48b49da0634bc2db620540cf",
+      "sourceName": "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20BurnableUpgradeable.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC20Upgradeable.sol",
+        "../../../utils/ContextUpgradeable.sol",
+        "../../../proxy/utils/Initializable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20BurnableUpgradeable"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol": {
+      "lastModificationDate": 1681550915847,
+      "contentHash": "6200b84950eb05b4a92a39fd1d6e0f9b",
+      "sourceName": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../proxy/utils/Initializable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ContextUpgradeable"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol": {
+      "lastModificationDate": 1681550916255,
+      "contentHash": "fc5844e59776a976987884e4d9814c7d",
+      "sourceName": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/AddressUpgradeable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.2"
+      ],
+      "artifacts": [
+        "Initializable"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol": {
+      "lastModificationDate": 1681550915823,
+      "contentHash": "228f256dbb21393bc9ad02648e222f74",
+      "sourceName": "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.1"
+      ],
+      "artifacts": [
+        "AddressUpgradeable"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol": {
+      "lastModificationDate": 1681550916038,
+      "contentHash": "3731d62752408e56578b89ac293659c6",
+      "sourceName": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20Upgradeable.sol",
+        "./extensions/IERC20MetadataUpgradeable.sol",
+        "../../utils/ContextUpgradeable.sol",
+        "../../proxy/utils/Initializable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20Upgradeable"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol": {
+      "lastModificationDate": 1681550916176,
+      "contentHash": "a9ed3c7bc7d9ebb5e34f20829274f088",
+      "sourceName": "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Upgradeable"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@openzeppelin/contracts-upgradeable/token/ERC20/extensions/IERC20MetadataUpgradeable.sol": {
+      "lastModificationDate": 1681550916173,
+      "contentHash": "9efcd5467a7f0bf533910ee8a267adb2",
+      "sourceName": "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/IERC20MetadataUpgradeable.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20Upgradeable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20MetadataUpgradeable"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/shared/libraries/TypeCasts.sol": {
+      "lastModificationDate": 1681550922301,
+      "contentHash": "e548342c5c29f12b65cae9ffc413ae1c",
+      "sourceName": "@connext/nxtp-contracts/contracts/shared/libraries/TypeCasts.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./TypedMemView.sol"
+      ],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "TypeCasts"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1681550916188,
+      "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/shared/libraries/TypedMemView.sol": {
+      "lastModificationDate": 1681550922301,
+      "contentHash": "e49d9dda069fdf57d2993fb1f38fa0d8",
+      "sourceName": "@connext/nxtp-contracts/contracts/shared/libraries/TypedMemView.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "TypedMemView"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/node_modules/@connext/nxtp-contracts/contracts/messaging/interfaces/IOutbox.sol": {
+      "lastModificationDate": 1681550922290,
+      "contentHash": "d70f45a88f6e12e527f4da0bb15daa61",
+      "sourceName": "@connext/nxtp-contracts/contracts/messaging/interfaces/IOutbox.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "IOutbox"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/contracts/OneInchV5Connector.sol": {
+      "lastModificationDate": 1681531703950,
+      "contentHash": "3c829db641ec4733a75d49d95cd96cf0",
+      "sourceName": "contracts/OneInchV5Connector.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "IAggregationExecutor",
+        "IOneInchV5AggregationRouter",
+        "OneInchV5Connector"
+      ]
+    },
+    "/Users/mohit/Desktop/MYPERSONAL/HACKATHONS/AbSwapX/Contracts/contracts/Reciever.sol": {
+      "lastModificationDate": 1681531703950,
+      "contentHash": "eb9b21c11bcc5f6b0d25e7d2b2e5ae96",
+      "sourceName": "contracts/Reciever.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@connext/interfaces/core/IXReceiver.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "Reciever"
+      ]
+    }
+  }
+}

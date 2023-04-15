@@ -158,7 +158,7 @@ contract BulkSwap is OpsTaskCreator, IXReceiver {
         // This contract approves transfer to Connext
         token.approve(address(connext), amount);
 
-        bytes exdata = abi.encode(recipient, _toToken);
+        bytes memory exdata = abi.encode(recipient, _toToken);
         connext.xcall{value: relayerFee}(
             destinationDomain, // _destination: Domain ID of the destination chain
             _destinationContractAddress, // _to: address receiving the funds on the destination
@@ -332,7 +332,7 @@ contract BulkSwap is OpsTaskCreator, IXReceiver {
         address _destinationContractAddress
     ) public payable {
         // int price = getLatestPrice();
-        if (price < _price) {
+        if (price != _price) {
             revert CONDITION_NOT_MET(price, _price);
         }
 
@@ -494,11 +494,11 @@ contract BulkSwap is OpsTaskCreator, IXReceiver {
         bytes memory _callData
   ) external returns (bytes memory) {
     // Unpack the _callData
-    (reciepient, tokenAddress) = abi.decode(_callData, (address, address));
+    (address reciepient, address tokenAddress) = abi.decode(_callData, (address, address));
 
         IERC20 token = IERC20(WETH);
         // This contract approves transfer to Connext
-        token.approve(address(connext), amount);
+        token.approve(address(connext), _amount);
         address[] memory path = new address[](2);
         path[0] = WETH;
         path[1] = tokenAddress;

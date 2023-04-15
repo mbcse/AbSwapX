@@ -1,0 +1,81 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "OpsTaskCreator",
+  "sourceName": "interfaces/OpsTaskCreator.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "dedicatedMsgSender",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fundsOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ops",
+      "outputs": [
+        {
+          "internalType": "contract IOps",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "taskTreasury",
+      "outputs": [
+        {
+          "internalType": "contract ITaskTreasuryUpgradable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "withdrawFunds",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

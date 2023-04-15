@@ -1,0 +1,252 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "SwapUtils",
+  "sourceName": "@connext/nxtp-contracts/contracts/core/connext/libraries/SwapUtils.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "provider",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "tokenAmounts",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "fees",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "invariant",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lpTokenSupply",
+          "type": "uint256"
+        }
+      ],
+      "name": "AddLiquidity",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newAdminFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "NewAdminFee",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newSwapFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "NewSwapFee",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "provider",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "tokenAmounts",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lpTokenSupply",
+          "type": "uint256"
+        }
+      ],
+      "name": "RemoveLiquidity",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "provider",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "tokenAmounts",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "fees",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "invariant",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lpTokenSupply",
+          "type": "uint256"
+        }
+      ],
+      "name": "RemoveLiquidityImbalance",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "provider",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lpTokenAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lpTokenSupply",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "boughtId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokensBought",
+          "type": "uint256"
+        }
+      ],
+      "name": "RemoveLiquidityOne",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "buyer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokensSold",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokensBought",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "soldId",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "boughtId",
+          "type": "uint128"
+        }
+      ],
+      "name": "TokenSwap",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220a90eca1fc16abdd010fb01aacc28621740e5700a2487d2722b94b115914f08d164736f6c63430008110033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220a90eca1fc16abdd010fb01aacc28621740e5700a2487d2722b94b115914f08d164736f6c63430008110033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
