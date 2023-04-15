@@ -1,7 +1,7 @@
 # AbswapX
 ### _**Create trustless limit orders across EVM chains**_
 
-Hey this our ETH Tokyo 2023 hack AbswapX. We have created an automation module for any account abstraction or EOA wallet to be able to be able to create limit orders from any token on any source chain to another token on any destination chain across EVM.
+Hey this our ETH Tokyo 2023 hack AbswapX. We have created an automation module for any account abstraction or EOA wallet to be able to create limit orders or any scheduled DeFi strategy from any token on any source chain to another token on any destination chain across EVM.
 
 ## Key Features
 **1. Trustless** - AbswapX is a smart contract module, meaning it is completely decentralized, composable and operates on a trustless system.
