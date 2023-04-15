@@ -7,12 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        Poppins: ['Poppins', 'sans-serif'],
       },
+      colors: {
+        'primary-dark': '#1C1C1C',
+        'secondary-white': '#F4F4F4',
+        'secondary-dark': '#222228',
+        'primary-green': '#10BB35',
+      }
     },
-  },
-  plugins: [],
+    plugins: [
+      require("daisyui"),
+    ],
+  }
 }
