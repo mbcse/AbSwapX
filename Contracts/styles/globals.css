@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+     
+     input[type="range"]::-webkit-slider-thumb {
+         width: 15px;
+         -webkit-appearance: none;
+           appearance: none;
+         height: 15px;
+         cursor: pointer;
+         background: #FFF;
+         box-shadow: -405px 0 0 400px #10bb35;
+         border-radius: 100%;
+         
+     }
+ }
+ .toggle-checkbox:checked {
+  @apply: right-0 border-primary-green;
+  right: 0;
+  border-color: #10bb35;
+}
+.toggle-checkbox:checked + .toggle-label {
+  @apply: bg-primary-green;
+  background-color: #10bb35;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.connect-wallet.show-profile-connect-wallet button:first-of-type {
+  align-self: left;
+  display: none;
+}
+.connect-wallet button:last-of-type {
+  display: none;
+}
+.connect-wallet {
+  margin-right: 20px;
+  /* max-width: max-content;
+  width: auto;
+  padding: 20px; */
+}
+
+.connect-wallet button:last-of-type {
+  align-self: left;
+  display: none;
+}
