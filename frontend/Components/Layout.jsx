@@ -24,22 +24,23 @@ import {
 
 import { publicProvider } from 'wagmi/providers/public'
 
+import { goerli, polygonMumbai, gnosis, polygon } from "wagmi/chains";
 
-const { chains, provider, webSocketProvider } = configureChains(
-    [chain.goerli, chain.polygonMumbai],
-    [publicProvider()],
-)
+const { chains, provider } = configureChains(
+    [polygon, gnosis],
+    [publicProvider()]
+);
+
 const { connectors } = getDefaultWallets({
-    appName: "Auto Pay",
-    chains
+    appName: "Autopay",
+    chains,
 });
 
-const client = createClient({
+const wagmiClient = createClient({
     autoConnect: true,
+    connectors,
     provider,
-    webSocketProvider,
-    connectors
-})
+});
 
 import { AppContext, AppProvider } from "../context/AppContext";
 import { useRouter } from 'next/router';
@@ -52,7 +53,7 @@ const Layout = ({ children }) => {
 
     return (
 
-        <WagmiConfig client={client}>
+        <WagmiConfig client={wagmiClient}>
             <RainbowKitProvider
                 showRecentTransactions={true}
                 theme={lightTheme({

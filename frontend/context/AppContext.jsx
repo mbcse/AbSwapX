@@ -24,10 +24,10 @@ export const AppProvider = ({ children }) => {
       _toChain: "",
       _destinationDomain: "",
       _relayerFee: "",
-      _frequency:"",
-      _time:[],
-      _triggerprice:"",
-      _triggertoken:[],
+      _frequency: "",
+      _time: [],
+      _triggerprice: "",
+      _triggertoken: [],
     }
   );
 
@@ -64,17 +64,26 @@ export const AppProvider = ({ children }) => {
   console.log({ data });
   const onExecuteOrder = async (setCheck, setStep) => {
     // e.preventDefault();
+    console.log("111")
 
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
 
       const contract = new ethers.Contract(
-        "0xD81F22FfD56Eb0B6074f73C8Ed7F54A173a692A0",
-        BulkSwap.abi,
+        "0xc082906F6744B3438c9eF78c738B225Af8e17021",
+        BulkSwap,
         signer
       )
       // const rFee = await fetchRelayerFees();
+      console.log("***", data._from,
+        data._to,
+        data._amount,
+        data._fromToken.id,
+        data._toToken[0].id,
+        data._toChain.id,
+        data._destinationDomain,
+        "1622849608341748",)
 
 
       setCheck(1);
@@ -83,11 +92,12 @@ export const AppProvider = ({ children }) => {
         data._to,
         data._amount,
         data._fromToken.id,
-        data._toToken.id,
+        data._toToken[0].id,
         data._toChain.id,
         data._destinationDomain,
-        "107087320435826",
-        { value: "107087320435826" }
+        "1622849608341748",
+        "0xaa3E5FA2DcB475752AC1fbE86769201A1e30b29B",
+        { value: "1622849608341748" }
       );
 
       setCheck(2);
@@ -95,7 +105,66 @@ export const AppProvider = ({ children }) => {
       setStep(2);
 
     } catch (error) {
+      alert(error.message);
       setCheck(0);
+      setStep(0);
+      console.error(error);
+    }
+
+  }
+
+  const onExecuteLimitOrder = async (setCheck, setStep, triggerprice) => {
+    // e.preventDefault();
+
+    try {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+
+      const contract = new ethers.Contract(
+        "0xc082906F6744B3438c9eF78c738B225Af8e17021",
+        BulkSwap,
+        signer
+      )
+      // const rFee = await fetchRelayerFees();
+
+      console.log("***",
+        data._from,
+        data._to,
+        data._amount,
+        triggerprice,
+        data._fromToken.id,
+        data._toToken[0].id,
+        data._toChain.id,
+        "6778479",
+        "1622849608341748",
+        "0xaa3E5FA2DcB475752AC1fbE86769201A1e30b29B",
+      )
+
+
+
+      setCheck(1);
+      const tx = await contract.createDeposit(
+        data._from,
+        data._to,
+        data._amount,
+        triggerprice,
+        data._fromToken.id,
+        data._toToken[0].id,
+        data._toChain.id,
+        "6778479",
+        "1622849608341748",
+        "0xaa3E5FA2DcB475752AC1fbE86769201A1e30b29B",
+        { value: "1622849608341748" }
+      );
+
+      setCheck(2);
+      await tx.wait();
+      setStep(0);
+
+    } catch (error) {
+      alert(error.message);
+      setCheck(0);
+      setStep(0);
       console.error(error);
     }
 
@@ -110,7 +179,8 @@ export const AppProvider = ({ children }) => {
     setStep,
     data,
     setData,
-    onExecuteOrder
+    onExecuteOrder,
+    onExecuteLimitOrder
   };
 
   return (

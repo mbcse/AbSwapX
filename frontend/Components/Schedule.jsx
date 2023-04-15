@@ -52,13 +52,17 @@ const Schedule = () => {
   const [tokeninput, setTokeninput] = useState({});
   const [tokeninput1, setTokenInput1] = useState({});
   const [amount, setAmount] = useState(0);
+
   const { step,
     setStep,
     data,
     setData,
-    onExecuteOrder } = useContext(AppContext);
+    onExecuteOrder, onExecuteLimitOrder } = useContext(AppContext);
 
-  const onSubmitDCA = async ()=>{
+  const [check, setCheck] = useState(0);
+  const [txHash, setTxHash] = useState("");
+
+  const onSubmitDCA = async () => {
     setData(
       {
         _from: "",
@@ -69,14 +73,17 @@ const Schedule = () => {
         _toChain: "",
         _destinationDomain: "",
         _relayerFee: "",
-        _frequency:frequency,
-        _time:time,
-        _triggerprice:"",
-        _triggertoken:[],
+        _frequency: frequency,
+        _time: time,
+        _triggerprice: "",
+        _triggertoken: [],
       }
-  );
+    );
   }
-  const onSubmitprice = async ()=>{
+  const onSubmitprice = async () => {
+
+    await onExecuteLimitOrder(setCheck, setStep, triggerprice);
+
     setData(
       {
         _from: "",
@@ -87,12 +94,12 @@ const Schedule = () => {
         _toChain: "",
         _destinationDomain: "",
         _relayerFee: "",
-        _frequency:"",
-        _time:[],
-        _triggerprice:triggerprice,
-        _triggertoken:token,
+        _frequency: "",
+        _time: [],
+        _triggerprice: triggerprice,
+        _triggertoken: token,
       }
-  );
+    );
   }
   return (
     <div classname="flex flex-col justify-start items-start w-full ">
@@ -110,15 +117,15 @@ const Schedule = () => {
                 </h1>
               </div>
               <div className="flex flex-row justify-between items-center p-[20px] gap-[15px] bg-white rounded-[10px] w-full">
-              <Time
-                    options={times}
-                    className="flex-[0.5]"
-                    placeholder="Select time"
-                    width={60}
-                    name="time"
-                    value={time}
-                    onChange={setTime}
-                  />
+                <Time
+                  options={times}
+                  className="flex-[0.5]"
+                  placeholder="Select time"
+                  width={60}
+                  name="time"
+                  value={time}
+                  onChange={setTime}
+                />
                 <input
                   type="number"
                   placeholder="Enter total number of cycles"
@@ -132,62 +139,62 @@ const Schedule = () => {
               </div>
               <div className="flex  justify-start items-center w-full gap-[2px]">
                 <h1 classname="font-semibold text-sm flex items-center text-[#464646] w-full">
-                 {data.amount} </h1>
-                {data._fromToken.map((item,i)=>{
-                  <div key={i} className="flex flex-row items-center gap-[5px]">
+                  {data.amount} </h1>
+                {/* {data._fromToken.map((item,i)=>{ */}
+                <div className="flex flex-row items-center gap-[5px]">
                   <img
-                    src={item.icon}
+                    src={data._fromToken?.icon}
                     alt="icon"
                     className="w-[10px] h-[10px] object-contain rounded-full"
                   />
                   <h1 className="font-semibold text-sm text-[#464646]">
-                    {item.name}
+                    {data._fromToken?.name}
                   </h1>
                 </div>
-                })}
-                    <h1 classname="font-semibold text-sm flex items-center text-[#464646] w-full">
-                  will be swapped to  
+                {/* })} */}
+                <h1 classname="font-semibold text-sm flex items-center text-[#464646] w-full">
+                  will be swapped to
                 </h1>
                 {/*  tokens which user select */}
-                {data. _toToken.map((item,i)=>{
+                {data._toToken.map((item, i) => {
 
-                <div key={i} className="flex flex-row items-center gap-[5px]">
+                  <div key={i} className="flex flex-row items-center gap-[5px]">
                     <img
-                      src={item.icon}
+                      src={item?.icon}
                       alt="icon"
                       className="w-[10px] h-[10px] object-contain rounded-full"
                     />
                     <h1 className="font-semibold text-sm text-[#464646]">
-                      {item.name}
+                      {item?.name}
                     </h1>
                   </div>
                 })}
-                  <h1 classname="font-semibold text-sm flex items-center text-[#464646] w-full">
-                   ,at the frequency of ({data._amount}/{data._frequency}) 
+                <h1 classname="font-semibold text-sm flex items-center text-[#464646] w-full">
+                  ,at the frequency of ({data._amount}/{data._frequency})
                 </h1>
-                {data._fromToken.map((item,i)=>{
-                  <div key={i} className="flex flex-row items-center gap-[5px]">
+                {/* {data._fromToken.map((item, i) => { */}
+                <div className="flex flex-row items-center gap-[5px]">
                   <img
-                    src={item.icon}
+                    src={data._fromToken?.icon}
                     alt="icon"
                     className="w-[10px] h-[10px] object-contain rounded-full"
                   />
                   <h1 className="font-semibold text-sm text-[#464646]">
-                    {item.name}
+                    {data._fromToken?.name}
                   </h1>
                 </div>
-                })}
-                  <h1 classname="font-semibold text-sm flex items-center text-[#464646] w-full">
-                   /{data._time.name}
+                {/* })} */}
+                <h1 classname="font-semibold text-sm flex items-center text-[#464646] w-full">
+                  /{data._time?.name}
                 </h1>
-                  
+
               </div>
 
               <div className="flex flex-col items-end gap-[10px] w-full">
                 <button
-                onClick={()=>{
-                  onSubmitDCA();
-                }} className="bg-primary-green py-[10px] px-[30px]  rounded-lg font-semibold text-base text-white">
+                  onClick={() => {
+                    onSubmitDCA();
+                  }} className="bg-primary-green py-[10px] px-[30px]  rounded-lg font-semibold text-base text-white">
                   Confirm
                 </button>
               </div>
@@ -203,7 +210,7 @@ const Schedule = () => {
                   <h1 className="font-normal text-sm text-center text-[#637592]">
                     Coin --
                   </h1>
-                  <Selecttoken
+                  {/* <Selecttoken
                     options={coins}
                     className="flex-[0.5]"
                     placeholder="Select token"
@@ -211,7 +218,10 @@ const Schedule = () => {
                     name="token"
                     value={token}
                     onChange={setToken}
-                  />
+                  /> */}
+                  <div className="px-4 py-3 rounded-md">
+                    ETH Price in USD
+                  </div>
                 </div>
                 <input
                   type="number"
@@ -224,15 +234,71 @@ const Schedule = () => {
                   className=" text-[18px] w-full border border-[rgba(0,0,0,0.1)]  text-[#464646] focus:outline-none placeholder-shown:text-right text-right py-[10px] px-[10px] justify-end rounded-[8px] flex placeholder-right placeholder-[rgba(70,70,70,0.6)]"
                 />
               </div>
-              
+
               <div className="flex flex-col items-end gap-[10px] w-full">
-                <button 
-                onClick={()=>{
-                  onSubmitprice();
-                }}
-                className="bg-primary-green py-[10px] px-[30px]  rounded-lg font-semibold text-base text-white">
+                {/* <button
+                  onClick={() => {
+                    onSubmitprice();
+                  }}
+                  className="bg-primary-green py-[10px] px-[30px]  rounded-lg font-semibold text-base text-white">
                   Confirm
-                </button>
+                </button> */}
+
+                <div>
+                  {check === 0 && (
+                    <button
+                      className="bg-primary-green py-[5px] px-[15px] gap-[7px] rounded-md font-semibold text-base text-white"
+                      onClick={() => {
+                        onSubmitprice();
+                      }}
+                    >
+                      Send
+                    </button>
+                  )}
+                  {check === 1 && (
+                    <button className="py-[5px] flex flex-row justify-center items-center  px-[15px] gap-[7px] rounded-md font-medium text-xs text-[#464646]">
+                      <img
+                        src="/loading.png"
+                        className="w-[24px] h-[24px] object-contain rounded-full animate-spin "
+                      />
+                      confirm in wallet
+                    </button>
+
+                  )}
+                  {
+                    check === 2 && (
+                      <div className="flex flex-row justify-end  items-center gap-2">
+                        <button className="py-[5px] flex flex-row justify-end items-center  px-[6px] gap-[7px]  rounded-md font-medium text-xs text-[#464646]">
+                          <img
+                            src="/loading.png"
+                            className="w-[24px] h-[24px] object-contain rounded-full animate-spin "
+                          />
+                          Processing
+                        </button>
+                        <a href={txHash} target="_blank">
+                          <button className="py-[5px] flex flex-row justify-end items-center hover:bg-[rgba(16,187,53,0.12)] border border-white hover:border hover:border-[#10bb35] px-[6px] gap-[7px] rounded-md font-medium text-xs text-[#464646]">
+                            <TxBTN />
+                            View Transaction
+                          </button>
+                        </a>
+                      </div>
+                    )
+                  }
+                  {/* after a delay it go to review page */}
+                  {check === 3 && (
+                    <div className="flex flex-row justify-end  items-center gap-2">
+                      <button className="py-[5px] flex flex-row justify-end items-center  px-[6px] gap-[7px]  rounded-md font-medium text-xs text-primary-green">
+                        Send
+                      </button>
+                      <a href={txHash} target="_blank">
+                        <button className="py-[5px] flex flex-row justify-end items-center hover:bg-[rgba(16,187,53,0.12)] border border-white hover:border hover:border-[#10bb35] px-[6px] gap-[7px] rounded-md font-medium text-xs text-[#464646]">
+                          <TxBTN />
+                          View Transaction
+                        </button>
+                      </a>
+                    </div>
+                  )}
+                </div>
               </div>
             </Tab.Panel>
           </Tab.Panels>

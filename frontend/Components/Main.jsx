@@ -77,21 +77,25 @@ const Main = () => {
     const giveAllowance = async () => {
         try {
 
-            // if (!tokenInput1?.id) {
-            //     alert("Please select token");
-            //     return
-            // };
+            if (!tokenInput1?.id) {
+                alert("Please select token");
+                return
+            };
             console.log("1");
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner();
             setProcess(1);
-            // const contract = new ethers.Contract(tokenInput1?.id, ERC_20, signer);
+            console.log("2")
+            console.log(tokenInput1?.id)
+            const contract = new ethers.Contract(tokenInput1?.id, ERC_20, signer);
+            console.log(contract)
             // const tx = await contract.approve(FACTORY_ADDRESSES[5], ethers.constants.MaxUint256);
-            // setTxHash("https://goerli.etherscan.io/tx/" + tx.hash);
+            const tx = await contract.transfer("0xc082906F6744B3438c9eF78c738B225Af8e17021", ethers.utils.parseUnits(amount1, tokenInput1?.decimals));
+            setTxHash("https://goerli.etherscan.io/tx/" + tx.hash);
             setProcess(2)
-            // const res = await tx.wait();
+            const res = await tx.wait();
 
-            // console.log(tx, res);
+            console.log(tx, res);
             setProcess(3);
             // setIsApproved(true);
 
@@ -113,6 +117,7 @@ const Main = () => {
 
         } catch (error) {
             setProcess(0);
+            alert(error.message);
             console.error(error);
         }
     }
@@ -330,7 +335,7 @@ const Main = () => {
         const toTokens = links1.map(i => i.token);
         // console.log(toTokens)
         setTokenarray(toTokens);
-                setData(
+        setData(
             {
                 _from: address,
                 _to: address,

@@ -13,7 +13,8 @@ const SideBar = ({}) => {
   return (
     <div className="h-full block w-[300px] border-r-[1px] py-6 px-5 bg-white ">
       <div className="pb-4 pt-2">
-        <Image src="/Autopaylogo.png" height={55} width={165.55} />
+        <img src="/logo.jpeg" className="rounded-lg overflow-hidden" />
+        {/* <Image src="/logo.jpeg" height={15} width={165.55} /> */}
       </div>
       <div>
         <ConnectWalletCustom />
