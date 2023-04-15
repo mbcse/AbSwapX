@@ -25,7 +25,7 @@ const Approve = ({ giveAllowance, txHash, process, tokenInput1, tokeninput }) =>
       <div className="flex flex-col items-start p-[15px] gap-[15px] bg-[rgba(16,187,53,0.12)] w-full">
         <div className="flex  justify-start items-center w-full">
           <h1 classname="font-normal text-sm flex items-center text-[#464646]">
-            Approval Required
+            Token custody Required
           </h1>
         </div>
         {/*token approval */}

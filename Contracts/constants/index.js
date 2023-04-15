@@ -80,6 +80,24 @@ export const coins = [
         decimals: 18,
         icon: "https://static.optimism.io/data/WETH/logo.png",
     },
+    {
+        id: "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+        name: "ApeCoin",
+        decimals: 18,
+        icon: "https://pbs.twimg.com/card_img/1644169471786119168/hOxi-uFm?format=png&name=small",
+    },
+    {
+        id: "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+        name: "GHO",
+        decimals: 18,
+        icon: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcoinmarketcap.com%2Falexandria%2Farticle%2Fwhat-is-aave-s-decentralized-stablecoin-gho&psig=AOvVaw37B1v9hk0SYJIsUpQvmyuQ&ust=1681676882702000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCLirttvcrP4CFQAAAAAdAAAAABAE",
+    },
+    {
+        id: "0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb3",
+        name: "GNO",
+        decimals: 18,
+        icon: "https://docs.gnosischain.com/img/tokens/gno.png",
+    },
 ];
 
 export const abi = [
