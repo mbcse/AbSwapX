@@ -49,12 +49,13 @@ const deployGoerli = async () => {
 
 
   await hre.run("verify:verify", {
-    address: "0x5E22030F94E8d9D9027757FaF7353266EDa07a4E",
+    address: bulkSwap.address,
     constructorArguments: [
       "0xFCa08024A6D4bCc87275b1E4A1E22B71fAD7f649",
       "0xE592427A0AEce92De3Edee1F18E0157C05861564",
       "0xc1C6805B857Bef1f412519C4A842522431aFed39"
     ],
+    network: "goerli"
   });
 }
 
@@ -73,12 +74,13 @@ const deployMumbai = async () => {
   );
 
   await hre.run("verify:verify", {
-    address: "0x5E22030F94E8d9D9027757FaF7353266EDa07a4E",
+    address: bulkSwap.address,
     constructorArguments: [
       "0x2334937846Ab2A3FCE747b32587e1A1A2f6EEC5a",
       "0xE592427A0AEce92De3Edee1F18E0157C05861564",
       "0xB3f5503f93d5Ef84b06993a1975B9D21B962892F"
     ],
+    network: "polygonMumbai"
   });
 }
 
@@ -86,8 +88,8 @@ const deployMumbai = async () => {
 
 
 async function main() {
-  await deployGoerli();
-  // await deployMumbai();
+  // await deployGoerli();
+  await deployMumbai();
 }
 
 // We recommend this pattern to be able to use async/await everywhere
