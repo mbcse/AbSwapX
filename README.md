@@ -21,8 +21,8 @@ When the price of the token pair reaches the user's specified price, the Gelato 
 
 You can find our contract deployments on - 
 * Mainnets
-  * <a href="https://polygonscan.com/address/0xc082906f6744b3438c9ef78c738b225af8e17021#tokentxns" target="_blank">Gnosis Chain</a>
-  * <a href="https://gnosisscan.io/address/0xaa3E5FA2DcB475752AC1fbE86769201A1e30b29B" target="_blank">Polygon Chain</a>
+  * <a href="https://polygonscan.com/address/0xc082906f6744b3438c9ef78c738b225af8e17021#tokentxns" target="_blank">Polygon Chain</a>
+  * <a href="https://gnosisscan.io/address/0xaa3E5FA2DcB475752AC1fbE86769201A1e30b29B" target="_blank">Gnosis Chain</a>
 * Testnets
   * <a href="https://goerli.etherscan.io/address/0xd55cb9fa29c5E66B2681dfbA56e3bcAae15571ed" target="_blank">Goerli Testnet</a>
   * <a href="https://www.google.com/" target="_blank">Polygon Testnet</a>
