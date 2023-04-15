@@ -86,8 +86,8 @@ const deployMumbai = async () => {
 
 
 async function main() {
-  deployGoerli();
-  // deployMumbai();
+  await deployGoerli();
+  await deployMumbai();
 }
 
 // We recommend this pattern to be able to use async/await everywhere

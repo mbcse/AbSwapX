@@ -22,8 +22,10 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
 import "hardhat/console.sol";
+import {IXReceiver} from "@connext/interfaces/core/IXReceiver.sol";
+import "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol";
 
-contract BulkSwap is OpsTaskCreator {
+contract BulkSwap is OpsTaskCreator, IXReceiver {
     using SafeERC20 for IERC20;
 
     receive() external payable {}
@@ -35,10 +37,10 @@ contract BulkSwap is OpsTaskCreator {
 
     uint24 public constant poolFee = 500;
     uint256 public out;
-    address public constant WETH = 0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6;
+    address public WETH ;
 
     AggregatorV3Interface internal priceFeed;
-
+    IUniswapV2Router02 public honeySwapRouter2 ;
     // constructor() public {
     //     priceFeed = AggregatorV3Interface(0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419);
     // }
@@ -76,7 +78,8 @@ contract BulkSwap is OpsTaskCreator {
         address _toToken,
         uint256 _toChain,
         uint32 destinationDomain,
-        uint256 relayerFee
+        uint256 relayerFee,
+        address _destinationContractAddress
     ) internal returns (bytes32) {
         bytes memory execData = abi.encodeWithSelector(
             this.executeLimitOrder.selector,
@@ -88,7 +91,8 @@ contract BulkSwap is OpsTaskCreator {
             _toToken,
             _toChain,
             destinationDomain,
-            relayerFee
+            relayerFee,
+            _destinationContractAddress
         );
 
         ModuleData memory moduleData = ModuleData({
@@ -146,20 +150,23 @@ contract BulkSwap is OpsTaskCreator {
         address tokenAddress,
         uint256 amount,
         uint256 slippage,
-        uint256 relayerFee
+        uint256 relayerFee,
+        address _destinationContractAddress,
+        address _toToken
     ) public payable {
         IERC20 token = IERC20(tokenAddress);
         // This contract approves transfer to Connext
         token.approve(address(connext), amount);
 
+        bytes exdata = abi.encode(recipient, _toToken);
         connext.xcall{value: relayerFee}(
             destinationDomain, // _destination: Domain ID of the destination chain
-            recipient, // _to: address receiving the funds on the destination
+            _destinationContractAddress, // _to: address receiving the funds on the destination
             tokenAddress, // _asset: address of the token contract
             msg.sender, // _delegate: address that can revert or forceLocal on destination
             amount, // _amount: amount of tokens to transfer
             slippage, // _slippage: the maximum amount of slippage the user will accept in BPS
-            "" // _callData: empty because we're only sending funds
+            exdata // _callData: empty because we're only sending funds
         );
     }
 
@@ -171,7 +178,8 @@ contract BulkSwap is OpsTaskCreator {
         address _toToken,
         uint256 _toChain,
         uint32 destinationDomain,
-        uint256 relayerFee
+        uint256 relayerFee,
+        address _destinationContractAddress
     ) public payable {
         require(_amount > 0, "Amount must be greater than 0");
         require(_fromToken != _toToken, "From and To tokens must be different");
@@ -198,7 +206,9 @@ contract BulkSwap is OpsTaskCreator {
             WETH,
             amountOut,
             slippage,
-            relayerFee
+            relayerFee,
+            _destinationContractAddress,
+            _toToken
         );
 
         emit Action(
@@ -218,7 +228,8 @@ contract BulkSwap is OpsTaskCreator {
         address[] calldata _toTokens,
         uint256 _toChain,
         uint32 _destinationDomain,
-        uint256 relayerFee
+        uint256 relayerFee,
+        address _destinationContractAddress
     ) public payable {
         for (uint256 i = 0; i < _amounts.length; i++) {
             executeOrder(
@@ -229,7 +240,8 @@ contract BulkSwap is OpsTaskCreator {
                 _toTokens[i],
                 _toChain,
                 _destinationDomain,
-                relayerFee
+                relayerFee,
+                _destinationContractAddress
             );
         }
     }
@@ -242,7 +254,8 @@ contract BulkSwap is OpsTaskCreator {
         address _toToken,
         uint256 _toChain,
         uint32 _destinationDomain,
-        uint256 relayerFee
+        uint256 relayerFee,
+        address _destinationContractAddress
     ) public payable {
         for (uint256 i = 0; i < _amounts.length; i++) {
             executeOrder(
@@ -253,7 +266,8 @@ contract BulkSwap is OpsTaskCreator {
                 _toToken,
                 _toChain,
                 _destinationDomain,
-                relayerFee
+                relayerFee, 
+                _destinationContractAddress
             );
         }
     }
@@ -314,7 +328,8 @@ contract BulkSwap is OpsTaskCreator {
         address _toToken,
         uint256 _toChain,
         uint32 destinationDomain,
-        uint256 relayerFee
+        uint256 relayerFee,
+        address _destinationContractAddress
     ) public payable {
         // int price = getLatestPrice();
         if (price < _price) {
@@ -329,7 +344,8 @@ contract BulkSwap is OpsTaskCreator {
             _toToken,
             _toChain,
             destinationDomain,
-            relayerFee
+            relayerFee,
+            _destinationContractAddress
         );
 
         (uint256 fee, address feeToken) = _getFeeDetails();
@@ -345,7 +361,8 @@ contract BulkSwap is OpsTaskCreator {
         address _toToken,
         uint256 _toChain,
         uint32 destinationDomain,
-        uint256 relayerFee
+        uint256 relayerFee,
+        address _destinationContractAddress
     ) external payable returns (bool) {
         DepositCounter++;
         authorOf[DepositCounter] = _from;
@@ -361,7 +378,8 @@ contract BulkSwap is OpsTaskCreator {
             _toToken,
             _toChain,
             destinationDomain,
-            relayerFee
+            relayerFee,
+            _destinationContractAddress
         );
 
         activeDeposits.push(
@@ -458,4 +476,33 @@ contract BulkSwap is OpsTaskCreator {
 
         return true;
     }
+
+    function setHoneySwapRouter2(address _RouterAddress) public ownerOnly {
+        honeySwapRouter2 = IUniswapV2Router02(_RouterAddress);
+    }
+
+     function setWethAddress(address wethAddress) public ownerOnly {
+        WETH = wethAddress;
+    }
+
+    function xReceive(
+        bytes32 _transferId,
+        uint256 _amount,
+        address _asset,
+        address _originSender,
+        uint32 _origin,
+        bytes memory _callData
+  ) external returns (bytes memory) {
+    // Unpack the _callData
+    (reciepient, tokenAddress) = abi.decode(_callData, (address, address));
+
+        IERC20 token = IERC20(WETH);
+        // This contract approves transfer to Connext
+        token.approve(address(connext), amount);
+        address[] memory path = new address[](2);
+        path[0] = WETH;
+        path[1] = tokenAddress;
+
+        honeySwapRouter2.swapExactTokensForETHSupportingFeeOnTransferTokens(_amount, 0, path, reciepient, block.timestamp); 
+  }
 }
